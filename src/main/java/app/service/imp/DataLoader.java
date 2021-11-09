@@ -3,6 +3,7 @@ package app.service.imp;
 import app.model.Role;
 import app.model.User;
 import app.repository.UserRepo;
+import app.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 import org.springframework.transaction.annotation.Transactional;
@@ -15,7 +16,7 @@ import java.util.stream.Stream;
 public class DataLoader{
 
     @Autowired
-    private UserRepo userRepo;
+    private UserService userService;
 
     //@Transactional
     @PostConstruct
@@ -24,7 +25,7 @@ public class DataLoader{
                 Stream.of(new Role("ROLE_ADMIN")).collect(Collectors.toSet()));
         User user2 = new User("Ivan", "root", "Ivan", "Petrov", "petrov@mail.ru",
                 Stream.of ((new Role("ROLE_ADMIN")), (new Role("ROLE_USER"))).collect(Collectors.toSet()));
-        userRepo.addUser(user1);
-        userRepo.addUser(user2);
+        userService.addUser(user1);
+        userService.addUser(user2);
     }
 }

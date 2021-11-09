@@ -18,7 +18,7 @@ import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
 @Service
-//@Transactional
+@Transactional
 public class UserServiceImpl implements UserService {
     @Autowired
     private UserRepo userRepo;

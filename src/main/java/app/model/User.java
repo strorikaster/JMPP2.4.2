@@ -33,7 +33,7 @@ public class User implements Serializable, UserDetails {
     @Column(name = "email")
     private String email;
 
-    @ManyToMany(fetch = FetchType.EAGER, cascade = {CascadeType.PERSIST, CascadeType.MERGE})
+    @ManyToMany(fetch = FetchType.EAGER, cascade = {CascadeType.MERGE})
     @JoinTable(name = "tab_users_roles",
             joinColumns = @JoinColumn(name = "user_id"),
             inverseJoinColumns = @JoinColumn(name = "role_id"))

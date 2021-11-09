@@ -31,19 +31,16 @@ public class UserServiceImpl implements UserService {
 
 
     @Override
-    @Transactional
     public void addUser(User user) {
         userRepo.addUser(user);
     }
 
     @Override
-    @Transactional
     public void deleteUser(Long id) {
         userRepo.deleteUser(id);
     }
 
     @Override
-    @Transactional
     public void editUser(User user) {
         userRepo.editUser(user);
     }

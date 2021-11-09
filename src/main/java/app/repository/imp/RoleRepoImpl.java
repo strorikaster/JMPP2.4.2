@@ -17,6 +17,13 @@ public class RoleRepoImpl implements RoleRepo {
 
 
     @Override
+    public void addRole(Role role) {
+        //entityManager.persist(role);
+        entityManager.merge(role);
+        entityManager.flush();
+    }
+
+    @Override
     public Role getRoleByName(String name) {
         return entityManager.find(Role.class, name);
     }

@@ -20,6 +20,10 @@ public class RoleServiceImpl implements RoleService {
         this.roleRepo = roleRepo;
     }
 
+    public void addRole(Role role) {
+        roleRepo.addRole(role);
+    }
+
     @Override
     public Role getRoleByName(String name) {
         return roleRepo.getRoleByName(name);
